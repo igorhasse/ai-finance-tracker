@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useUser, UserButton } from "@clerk/nextjs";
 
@@ -16,12 +17,14 @@ function Header() {
       {isSignedIn ? (
         <UserButton />
       ) : (
-        <div>
+        <div className="flex gap-3 items-center">
           <Link href="/dashboard">
-            <Button>Dashoard</Button>
+            <Button variant="outline" className="rounded-full">
+              Dashboard
+            </Button>
           </Link>
           <Link href="/dashboard">
-            <Button>Get started</Button>
+            <Button className="rounded-full">Get started</Button>
           </Link>
         </div>
       )}
